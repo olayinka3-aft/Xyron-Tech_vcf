@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYRON TECH VCF</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">XYRON TECH VCF</div>
+        <button id="adminToggleBtn" class="btn-glow-sm">ᴀᴅᴍiɴ ᴘᴀɴᴇʟ</button>
+    </header>
+
+    <div id="systemNotice" class="notice-banner hidden"></div>
+
+    <div id="loginModal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <h3>🔒 ᴀᴅᴍiɴ ᴀᴜᴛʜᴇɴᴛɪᴄᴀᴛɪᴏɴ</h3>
+            <p class="panel-sub">Sign in to access the system control</p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="adminEmail" required placeholder="sir demon only 🤷‍♂️">
+                </div>
+                <div class="form-group">
+                    <label>Security Password</label>
+                    <input type="password" id="adminPassword" required placeholder="••••••••">
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn-glow-blue width-100">🔓 ᴀᴜᴛʜᴇɴᴛiᴄᴀᴛᴇ</button>
+                    <button type="button" id="closeModalBtn" class="btn-glow-sm width-100 margin-top-xs">ᴄᴀɴᴄᴇʟ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="adminPanel" class="admin-container hidden">
+        <div class="admin-card">
+            <h3>🔒 Admin Control Dashboard</h3>
+            <div class="admin-grid">
+                <div class="stat-box">
+                    <span class="stat-label">Total Submissions</span>
+                    <span id="adminTotalCount" class="stat-val">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Target Threshold</span>
+                    <input type="number" id="targetThresholdInput" value="50">
+                </div>
+            </div>
+            <div class="form-group margin-top">
+                <label>System Broadcast Message</label>
+                <input type="text" id="broadcastInput" placeholder="Enter alert message for users...">
+            </div>
+            <div class="admin-actions">
+                <button id="saveAdminSettings" class="btn-glow-blue">Save Settings</button>
+                <button id="exportDataBtn" class="btn-glow-purple">Export JSON</button>
+                <button id="clearDataBtn" class="btn-danger">Clear All Data</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-layout">
+        
+        <section class="panel-card status-card">
+            <h3>ᴘᴜʙʟiᴄ ꜱᴛᴀᴛᴜꜱ</h3>
+            <div class="progress-container">
+                <div class="glow-ring">
+                    <span id="progressText">0%</span>
+                </div>
+            </div>
+            <div class="status-details">
+                <p><span id="currentCountText">0</span> / <span id="targetCountText">100</span> Contacts Added</p>
+            </div>
+            <button id="downloadBulkBtn" class="btn-glow-blue disabled" disabled>ᴅᴏᴡɴʟᴏᴀᴅ ᴠᴄꜰ</button>
+            <p class="hint-text">Unlocked automatically once the target threshold is reached.</p>
+        </section>
+
+        <section class="panel-card form-card">
+            <h3>ꜱᴜʙᴍɪᴛ ʏᴏᴜʀ ᴄᴏɴᴛᴀᴄᴛ</h3>
+            <p class="panel-sub">Submit your details below to be included in the next  VCF drop.</p>
+            
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name / Business Name</label>
+                    <input type="text" id="fullName" required placeholder="e.g., Sir Demon">
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">WhatsApp / Phone Number</label>
+                    <input type="tel" id="phoneNumber" required placeholder="e.g., +234...">
+                </div>
+                <button type="submit" class="btn-glow-blue width-100">ꜱᴜʙᴍiᴛ ᴛᴏ ᴘᴏᴏʟ</button>
+            </form>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
